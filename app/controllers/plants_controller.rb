@@ -10,6 +10,7 @@ class PlantsController < ApplicationController
   # GET /plants/1
   # GET /plants/1.json
   def show
+    @measurements = @plant.measurements.newest_first
   end
 
   # GET /plants/new
