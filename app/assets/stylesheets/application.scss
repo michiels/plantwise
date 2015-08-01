@@ -1,2 +1,6 @@
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+$navbar-default-bg: #5cb85c;
+$navbar-default-color: #fff;
+@import "bootstrap";
+
+@import "plants";
