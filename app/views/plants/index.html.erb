@@ -1,4 +1,18 @@
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<% if false %>
+<nav class="navbar navbar-default navbar-custom">
+  <div class="container-fluid">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6 text-center">
+      <p class="navbar-text">Plants</p>
+    </div>
+    <div class="col-xs-3">
+    </div>
+  </div>
+</nav>
+<% end %>
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-visible navbar-custom" id="navbar-fixed">
   <div class="container-fluid">
     <div class="col-xs-3">
     </div>
@@ -31,5 +45,24 @@
         }
       })
     })
+
+    var touchStart = 0;
+
+    $("body").on("touchstart", function(event) {
+      touchStart = $(this).scrollTop();
+    })
+
+    $("body").on("touchmove", function(event) {
+      var newScrollTop = $(this).scrollTop()
+
+      if (newScrollTop >= touchStart && newScrollTop > 40) {
+        $("#navbar-fixed").switchClass("navbar-visible", "navbar-invisible")
+      } else if (newScrollTop < touchStart){
+        $("#navbar-fixed").show();
+        $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
+      }
+      
+    })
+
   })
 </script>

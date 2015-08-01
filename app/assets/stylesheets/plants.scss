@@ -2,12 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+body.fixed-navbar {
   padding-top: 70px;
 }
 
 .navbar-custom {
   box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+}
+
+#navbar-fixed {
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.navbar-invisible {
+  visibility: hidden;
+}
+
+.navbar-visible {
+  visibility: visible;
 }
 
 .plant {
