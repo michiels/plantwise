@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "plants#index"
+
   resources :plants
   namespace :api do
     namespace :v1 do
