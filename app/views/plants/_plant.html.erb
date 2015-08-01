@@ -1,0 +1,9 @@
+<%= content_tag_for(:div, plant, class: "row") do %>
+  <div class="col-xs-8">
+    <h3><%= plant.identifier.humanize %></h3>
+  </div>
+  <div class="col-xs-4">
+    <div data-behavior="circle-progress" data-circle-value="<%= plant.moisture_points %>" data-circle-color="#5bc0de" class="plant-health-circle">
+    </div>
+  </div>
+<% end %>
