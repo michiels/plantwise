@@ -6,6 +6,15 @@ body.fixed-navbar {
   padding-top: 70px;
 }
 
+body.standalone {
+  .ios-top-statusbar-background {
+    display: block;
+  }
+  #navbar-fixed {
+    padding-top: 20px;
+  }
+}
+
 .ios-top-statusbar-background {
   background: $brand-success;
   height: 20px;

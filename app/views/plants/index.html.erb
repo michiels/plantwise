@@ -36,7 +36,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     if(navigator.standalone) {
-      $(".ios-top-statusbar-background").show();
+      $("body").addClass("standalone");
     }
 
     $("[data-behavior=circle-progress]").each(function() {
