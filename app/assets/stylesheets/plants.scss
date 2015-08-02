@@ -49,13 +49,20 @@ body.standalone {
 }
 
 .view-page {
-  position: absolute;
-  left: 0;
-  top: 80px;
-  bottom: 0;
-  right: 0;
-  background: #fff;
+  padding-top: 80px;
+  width: 320px;
+  float: left;
+  -webkit-transform: translate3d(0,0,0);
 }
+
+// .view-page {
+//   position: absolute;
+//   left: 0;
+//   top: 80px;
+//   bottom: 0;
+//   right: 0;
+//   background: #fff;
+// }
 
 .view-page.current {
   -webkit-transition: all 0.2s linear;
@@ -77,8 +84,8 @@ body.standalone {
 }
 
 @keyframes hide-left {
-  from { -webkit-transform: translateX(0px); opacity: 1; }
-  to { -webkit-transform: translateX(-60px); opacity: 0; }
+  from { -webkit-transform: translateX(-320px); opacity: 1; }
+  to { -webkit-transform: translateX(-360px); opacity: 0; }
 }
 
 .new-page {
