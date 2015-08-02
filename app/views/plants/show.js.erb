@@ -1,5 +1,6 @@
 var new_page_html = $("<%= j render "show" %>")
 new_page_html.addClass("new-page")
+new_page_html.css({width: $(window).width()})
 var current_page = $(".old-page")
 $("#app-viewport").prepend(new_page_html)
 new_page_html.addClass("slide-left")

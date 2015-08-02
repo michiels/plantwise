@@ -50,11 +50,10 @@ body.standalone {
 
 .view-page {
   padding-top: 80px;
-  width: 320px;
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transform: translate3d(0,0,0);
+  right: 0;
 }
 
 // .view-page {
@@ -78,20 +77,6 @@ body.standalone {
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
   -webkit-transform: translate3d(0,0,0);
-}
-
-@keyframes slide-left {
-  from { -webkit-transform: translateX(320px); opacity: 0; }
-  to { -webkit-transform: translateX(0px); opacity: 1; }
-}
-
-@keyframes hide-left {
-  from { -webkit-transform: translateX(-320px); opacity: 1; }
-  to { -webkit-transform: translateX(-360px); opacity: 0; }
-}
-
-.new-page {
-  -webkit-transform: translateX(320px);
 }
 
 .slide-left {

@@ -23,6 +23,12 @@
   </div>
 </div>
 
+<div class="view-page new-page" data-role="page">
+  <div class="container-fluid">
+    <div class="row">
+      testint test
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
@@ -88,7 +94,25 @@
       }
     })
 
-    $("#app-viewport").width($(window).width() * 3)
+    $("<style>").prop("type", "text/css").html("\
+\
+    @keyframes slide-left {\
+      from { -webkit-transform: translateX(" + $(window).width() + "px); opacity: 0; }\
+      to { -webkit-transform: translateX(0px); opacity: 1; }\
+    }\
+\
+    @keyframes hide-left {\
+      from { -webkit-transform: translateX(0px); opacity: 1; }\
+      to { -webkit-transform: translateX(-40px); opacity: 0; }\
+    }\
+\
+    .new-page {\
+      -webkit-transform: translateX(" + $(window).width() + "px);\
+    }\
+\
+    .view-page {\
+      width: " + $(window).width() + "px; \
+    }").appendTo("head")
 
   })
 </script>
