@@ -1,4 +1,4 @@
-<%= content_tag_for(:a, plant, href: plant_path(plant), class: "row", data: { behavior: "slide-page" } ) do %>
+<%= content_tag_for(:a, plant, href: plant_path(plant), class: "row", data: { remote: true } ) do %>
   <div class="col-xs-8">
     <h3><%= plant.identifier.humanize %></h3>
   </div>

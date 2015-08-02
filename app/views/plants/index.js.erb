@@ -1,0 +1,11 @@
+var new_page_html = $("<%= j render "index" %>")
+new_page_html.addClass("backward-page")
+var current_page = $(".view-page")
+$("#app-viewport").append(new_page_html)
+
+new_page_html.addClass("slide-right")
+current_page.addClass("hide-to-right")
+
+setTimeout(1000, function() {
+  current_page.remove()
+})

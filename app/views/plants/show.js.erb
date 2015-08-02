@@ -1,7 +1,11 @@
 var new_page_html = $("<%= j render "show" %>")
-new_page_html.addClass("new-page")
-new_page_html.css({width: $(window).width()})
-var current_page = $(".old-page")
-$("#app-viewport").prepend(new_page_html)
+new_page_html.addClass("forward-page")
+var current_page = $(".view-page")
+$("#app-viewport").append(new_page_html)
+
 new_page_html.addClass("slide-left")
 current_page.addClass("hide-to-left")
+
+setTimeout(1000, function() {
+  current_page.remove()
+})

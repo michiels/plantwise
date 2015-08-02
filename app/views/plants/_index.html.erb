@@ -1,0 +1,26 @@
+<div id="plants-page" class="view-page" data-role="page">
+  <div class="container-fluid">
+
+    <%= render @plants %>
+
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $("[data-behavior=circle-progress]").each(function() {
+    var circle_value = $(this).data("circle-value");
+    var circle_color = $(this).data("circle-color");
+    $(this).circleProgress({
+      value: circle_value,
+      size: 100,
+      startAngle: -Math.PI / 2,
+      animationStartValue: 1.0,
+      fill: {
+        color: circle_color
+      }
+    })
+  })
+})
+</script>
