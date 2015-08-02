@@ -13,6 +13,9 @@ body.standalone {
   #navbar-fixed {
     padding-top: 20px;
   }
+  &.fixed-navbar {
+    padding-top: 90px;
+  }
 }
 
 .ios-top-statusbar-background {
