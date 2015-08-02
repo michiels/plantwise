@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font: 17px/21px -apple-system-font;
+}
+
 body.fixed-navbar {
   padding-top: 70px;
 }
@@ -30,7 +34,7 @@ body.standalone {
 }
 
 .navbar-custom {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
 }
 
 #navbar-fixed {
@@ -56,9 +60,16 @@ body.standalone {
   }
 }
 
+.navbar-title {
+  font: 17px/21px -apple-system-font;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #fff;
+}
+
 .plant-health-circle canvas {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 60px;
+  max-height: 60px;
 }
 
 $backColor: #eee;
