@@ -33,6 +33,10 @@ body.standalone {
   overflow-x: hidden;
 }
 
+.pages {
+  width: 2000px;
+}
+
 .ios-top-statusbar-background {
   background: $brand-success;
   height: 20px;
@@ -52,8 +56,7 @@ body.standalone {
   padding-top: 80px;
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  background: #fff;
 }
 
 // .view-page {
@@ -65,14 +68,6 @@ body.standalone {
 //   background: #fff;
 // }
 
-.view-page.current {
-  -webkit-transition: all 0.2s linear;
-}
-
-.view-page.new {
-  -webkit-transition: all 0.2s linear;
-}
-
 #navbar-fixed {
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
@@ -80,15 +75,15 @@ body.standalone {
 }
 
 .slide-left {
-  animation-name: slide-left;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: slide-left;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 .hide-to-left {
-  animation-name: hide-left;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: hide-left;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 .navbar-invisible {

@@ -9,3 +9,5 @@ $ ->
     current_page = $(".old-page")
     new_page_html.addClass("slide-left")
     current_page.addClass("hide-to-left")
+    setTimeout 1000, ->
+      current_page.remove()
