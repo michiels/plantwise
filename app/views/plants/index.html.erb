@@ -48,7 +48,20 @@
     $("body").on("touchmove", function(event) {
       var newScrollTop = $(this).scrollTop()
 
-      if (newScrollTop >= touchStart && newScrollTop > 40) {
+      if (newScrollTop >= touchStart && newScrollTop > 80) {
+        $("#navbar-fixed").switchClass("navbar-visible", "navbar-invisible")
+      } else if (newScrollTop < touchStart){
+        $("#navbar-fixed").show();
+        $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
+      }
+    })
+
+    $(window).scroll(function() {
+      var newScrollTop = $(this).scrollTop()
+
+      if (newScrollTop <= 0) {
+        $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
+      } else if (newScrollTop >= touchStart && newScrollTop > 80) {
         $("#navbar-fixed").switchClass("navbar-visible", "navbar-invisible")
       } else if (newScrollTop < touchStart){
         $("#navbar-fixed").show();
@@ -59,7 +72,9 @@
     $("body").on("touchend", function(event) {
       var newScrollTop = $(this).scrollTop()
 
-      if (newScrollTop >= touchStart && newScrollTop > 40) {
+      if (newScrollTop <= 0) {
+        $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
+      } else if (newScrollTop >= touchStart && newScrollTop > 80) {
         $("#navbar-fixed").switchClass("navbar-visible", "navbar-invisible")
       } else if (newScrollTop < touchStart){
         $("#navbar-fixed").show();
