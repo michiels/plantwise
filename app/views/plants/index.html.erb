@@ -1,3 +1,6 @@
+<div class="ios-top-statusbar-background">
+</div>
+
 <% if false %>
 <nav class="navbar navbar-default navbar-custom">
   <div class="container-fluid">
@@ -32,6 +35,10 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    if(navigator.standalone) {
+      $(".ios-top-statusbar-background").show();
+    }
+
     $("[data-behavior=circle-progress]").each(function() {
       var circle_value = $(this).data("circle-value");
       var circle_color = $(this).data("circle-color");
@@ -61,7 +68,17 @@
         $("#navbar-fixed").show();
         $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
       }
-      
+    })
+
+    $("body").on("touchend", function(event) {
+      var newScrollTop = $(this).scrollTop()
+
+      if (newScrollTop >= touchStart && newScrollTop > 40) {
+        $("#navbar-fixed").switchClass("navbar-visible", "navbar-invisible")
+      } else if (newScrollTop < touchStart){
+        $("#navbar-fixed").show();
+        $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
+      }
     })
 
   })

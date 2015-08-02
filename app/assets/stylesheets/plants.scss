@@ -6,6 +6,17 @@ body.fixed-navbar {
   padding-top: 70px;
 }
 
+.ios-top-statusbar-background {
+  background: $brand-success;
+  height: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: none;
+}
+
 .navbar-custom {
   box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
 }
