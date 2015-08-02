@@ -1,0 +1,30 @@
+<div id="plant-page" class="view-page" data-role="page">
+
+<div class="container-fluid">
+  <div class="row">
+    <p id="notice"><%= notice %></p>
+
+    <h1><%= @plant.identifier %></h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>moisture</th>
+          <th>created at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @measurements.each do |measurement| %>
+        <tr>
+          <td><%= measurement.moisture %></td>
+          <td><%= measurement.created_at %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to 'Edit', edit_plant_path(@plant) %> |
+    <%= link_to 'Back', plants_path %>
+  </div>
+</div>
+</div>

@@ -1,0 +1,7 @@
+var new_page_html = $("<%= j render "show" %>")
+new_page_html.addClass("new-page")
+var current_page = $(".old-page")
+$("#app-viewport").append(new_page_html)
+// $("#app-viewport").addClass("start-sliding")
+current_page.addClass("hide-to-left")
+new_page_html.addClass("slide-left")

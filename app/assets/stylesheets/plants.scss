@@ -22,6 +22,17 @@ body.standalone {
   }
 }
 
+#app-viewport {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
 .ios-top-statusbar-background {
   background: $brand-success;
   height: 20px;
@@ -37,10 +48,55 @@ body.standalone {
   // box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
 }
 
+.view-page {
+  position: absolute;
+  left: 0;
+  top: 80px;
+  bottom: 0;
+  right: 0;
+  width: 320px;
+  background: #fff;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.view-page.current {
+  -webkit-transition: all 0.2s linear;
+}
+
+.view-page.new {
+  -webkit-transition: all 0.2s linear;
+}
+
 #navbar-fixed {
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
   -webkit-transform: translate3d(0,0,0);
+}
+
+@keyframes slide-left {
+  from { -webkit-transform: translateX(320px); opacity: 0; }
+  to { -webkit-transform: translateX(0px); opacity: 1; }
+}
+
+@keyframes hide-left {
+  from { -webkit-transform: translateX(0px); opacity: 1; }
+  to { -webkit-transform: translateX(-60px); opacity: 0; }
+}
+
+.new-page {
+  -webkit-transform: translateX(320px);
+}
+
+.slide-left {
+  animation-name: slide-left;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.hide-to-left {
+  animation-name: hide-left;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
 }
 
 .navbar-invisible {
@@ -55,6 +111,7 @@ body.standalone {
   border-bottom: 1px solid $gray-lighter;
   padding-bottom: $grid-gutter-width / 2;
   padding-top: $grid-gutter-width / 2;
+  display: block;
   &:first-child {
     padding-top: 0;
   }
