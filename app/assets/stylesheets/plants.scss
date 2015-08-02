@@ -52,6 +52,12 @@ body.standalone {
   // box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
 }
 
+body.standalone {
+  .view-page {
+    padding-top: 90px;
+  }
+}
+
 .view-page {
   padding-top: 80px;
   position: absolute;
