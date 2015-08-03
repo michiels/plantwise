@@ -1,12 +1,13 @@
 var new_page_html = $("<%= j render "show" %>")
 new_page_html.addClass("forward-page")
 var current_page = $(".view-page")
-$("#app-viewport").append(new_page_html)
+current_page.css({"position": "absolute", "width": $(window).width()})
+current_page.after(new_page_html)
 
 new_page_html.addClass("slide-left")
 current_page.addClass("hide-to-left")
+$("body").scrollTop(0)
 $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
-
-setTimeout(1000, function() {
+setTimeout(function() {
   current_page.remove()
-})
+}, 400)

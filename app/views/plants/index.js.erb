@@ -1,12 +1,27 @@
 var new_page_html = $("<%= j render "index" %>")
 new_page_html.addClass("backward-page")
 var current_page = $(".view-page")
-$("#app-viewport").append(new_page_html)
+current_page.after(new_page_html)
+current_page.css({"position": "absolute"})
 
+// current_page.addClass("hide-to-right")
 new_page_html.addClass("slide-right")
-current_page.addClass("hide-to-right")
 $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
-
-setTimeout(1000, function() {
+$("body").scrollTop(0)
+setTimeout(function() {
   current_page.remove()
+}, 400);
+
+$("[data-behavior=circle-progress]").each(function() {
+  var circle_value = $(this).data("circle-value");
+  var circle_color = $(this).data("circle-color");
+  $(this).circleProgress({
+    value: circle_value,
+    size: 100,
+    startAngle: -Math.PI / 2,
+    animationStartValue: 1.0,
+    fill: {
+      color: circle_color
+    }
+  })
 })

@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+html,body {
   font: 17px/21px -apple-system-font;
+  overflow-x: hidden;
+  width: 320px;
+  max-width: 320px;
 }
 
 body.fixed-navbar {
@@ -22,18 +25,12 @@ body.standalone {
   }
 }
 
-#app-viewport {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-}
-
-.pages {
-  width: 2000px;
-}
+// #app-viewport {
+//   width: 320;
+//   height: 480px;
+//   overflow: scroll;
+//   -webkit-overflow-scrolling: touch;
+// }
 
 .ios-top-statusbar-background {
   background: $brand-success;
@@ -57,16 +54,7 @@ body.standalone {
 }
 
 .view-page {
-  padding-top: 80px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow-y: scroll;
   background: #fff;
-  -webkit-transform: translate3d(0,0,0);
-  -webkit-overflow-scrolling: touch;
 }
 
 // .view-page {
@@ -99,7 +87,6 @@ body.standalone {
 .hide-to-right {
   -webkit-animation-name: hide-right;
   -webkit-animation-duration: 0.4s;
-  -webkit-animation-fill-mode: forwards;
 }
 
 .hide-to-left {
@@ -124,7 +111,7 @@ body.standalone {
   &:first-child {
     padding-top: 0;
   }
-  &:hover {
+  &.active-link {
     background: $brand-success;
     color: #fff;
   }

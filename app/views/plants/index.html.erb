@@ -13,27 +13,39 @@
   </div>
 </nav>
 
-<div id="app-viewport">
-
-  <%= render "index" %>
-
-</div>
+<%= render "index" %>
 
 <script type="text/javascript">
   $(document).ready(function() {
     FastClick.attach(document.body);
-    
+
+
+      $("[data-behavior=circle-progress]").each(function() {
+        var circle_value = $(this).data("circle-value");
+        var circle_color = $(this).data("circle-color");
+        $(this).circleProgress({
+          value: circle_value,
+          size: 100,
+          startAngle: -Math.PI / 2,
+          animationStartValue: 1.0,
+          fill: {
+            color: circle_color
+          }
+        })
+      })
+
+
     if(navigator.standalone) {
       $("body").addClass("standalone");
     }
 
     var touchStart = 0;
 
-    $("body").on("touchstart", ".view-page", function(event) {
+    $("body").on("touchstart", function(event) {
       touchStart = $(this).scrollTop();
     })
 
-    $("body").on("touchmove", ".view-page", function(event) {
+    $("body").on("touchmove", function(event) {
       var newScrollTop = $(this).scrollTop()
 
       if (newScrollTop >= touchStart && newScrollTop > 80) {
@@ -44,7 +56,7 @@
       }
     })
 
-    $(".view-page").scroll(function() {
+    $("body").scroll(function() {
       var newScrollTop = $(this).scrollTop()
 
       if (newScrollTop <= 0) {
@@ -57,7 +69,7 @@
       }
     })
 
-    $("body").on("touchend", ".view-page", function(event) {
+    $("body").on("touchend", function(event) {
       var newScrollTop = $(this).scrollTop()
 
       if (newScrollTop <= 0) {
@@ -73,7 +85,7 @@
     $("<style>").prop("type", "text/css").html("\
 \
     @-webkit-keyframes slide-left {\
-      from { -webkit-transform: translateX(" + $(window).width() + "px); opacity: 0;}\
+      from { -webkit-transform: translateX(" + $(window).width() + "px); opacity: 0; }\
       to { -webkit-transform: translateX(0px); opacity: 1; }\
     }\
 \
@@ -89,7 +101,7 @@
 \
     @-webkit-keyframes hide-right {\
       from { -webkit-transform: translateX(0px); opacity: 1; }\
-      to { -webkit-transform: translateX(40px); opacity: 0;}\
+      to { -webkit-transform: translateX(40px); opacity: 0; }\
     }\
 \
     .forward-page {\
@@ -100,9 +112,16 @@
       -webkit-transform: translateX(" + (-$(window).width()) + "px);\
     }\
 \
-    .view-page {\
-      width: " + $(window).width() + "px; \
-    }").appendTo("head")
+").appendTo("head")
 
   })
 </script>
+
+<% if false %>
+.view-page { \
+  width: " + $(window).width() + "px; \
+  height: " + $(window).height() + "px; \
+  overflow: auto; \
+  -webkit-overflow-scrolling: touch; \
+}
+<% end %>
