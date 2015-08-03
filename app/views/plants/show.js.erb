@@ -5,6 +5,7 @@ $("#app-viewport").append(new_page_html)
 
 new_page_html.addClass("slide-left")
 current_page.addClass("hide-to-left")
+$("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
 
 setTimeout(1000, function() {
   current_page.remove()

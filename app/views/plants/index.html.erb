@@ -21,17 +21,19 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    FastClick.attach(document.body);
+    
     if(navigator.standalone) {
       $("body").addClass("standalone");
     }
 
     var touchStart = 0;
 
-    $("#app-viewport").on("touchstart", function(event) {
+    $("body").on("touchstart", ".view-page", function(event) {
       touchStart = $(this).scrollTop();
     })
 
-    $("#app-viewport").on("touchmove", function(event) {
+    $("body").on("touchmove", ".view-page", function(event) {
       var newScrollTop = $(this).scrollTop()
 
       if (newScrollTop >= touchStart && newScrollTop > 80) {
@@ -42,7 +44,7 @@
       }
     })
 
-    $("#app-viewport").scroll(function() {
+    $(".view-page").scroll(function() {
       var newScrollTop = $(this).scrollTop()
 
       if (newScrollTop <= 0) {
@@ -55,7 +57,7 @@
       }
     })
 
-    $("#app-viewport").on("touchend", function(event) {
+    $("body").on("touchend", ".view-page", function(event) {
       var newScrollTop = $(this).scrollTop()
 
       if (newScrollTop <= 0) {

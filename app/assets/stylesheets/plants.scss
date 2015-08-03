@@ -28,9 +28,7 @@ body.standalone {
   bottom: 0;
   left: 0;
   right: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .pages {
@@ -60,9 +58,15 @@ body.standalone {
 
 .view-page {
   padding-top: 80px;
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
   background: #fff;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-overflow-scrolling: touch;
 }
 
 // .view-page {
@@ -119,6 +123,10 @@ body.standalone {
   display: block;
   &:first-child {
     padding-top: 0;
+  }
+  &:hover {
+    background: $brand-success;
+    color: #fff;
   }
 }
 
