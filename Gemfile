@@ -32,6 +32,8 @@ gem 'capistrano-rails', '~> 1.1.2'
 
 gem 'rails-assets-fastclick'
 
+gem 'font-awesome-sass', '~> 4.3.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

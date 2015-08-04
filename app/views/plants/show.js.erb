@@ -11,3 +11,8 @@ $("#navbar-fixed").switchClass("navbar-invisible", "navbar-visible")
 setTimeout(function() {
   current_page.remove()
 }, 400)
+
+new_navbar_html = $("<%= j render "navbar" %>")
+new_navbar_html.css({opacity: 0})
+$("#navbar-fixed").html(new_navbar_html)
+new_navbar_html.addClass("navbar-slide-in")

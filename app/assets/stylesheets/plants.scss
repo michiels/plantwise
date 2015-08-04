@@ -5,8 +5,7 @@
 html,body {
   font: 17px/21px -apple-system-font;
   overflow-x: hidden;
-  width: 320px;
-  max-width: 320px;
+  width: 100%;
 }
 
 body.fixed-navbar {
@@ -67,6 +66,18 @@ body.standalone {
   -webkit-transform: translate3d(0,0,0);
 }
 
+.navbar-slide-in {
+  -webkit-animation-name: slide-left;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.navbar-slide-back {
+  -webkit-animation-name: slide-right;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards;
+}
+
 .slide-left {
   -webkit-animation-name: slide-left;
   -webkit-animation-duration: 0.4s;
@@ -98,6 +109,10 @@ body.standalone {
   visibility: visible;
 }
 
+a.plant {
+  color: $brand-success;
+}
+
 .plant {
   border-bottom: 1px solid $gray-lighter;
   padding-bottom: $grid-gutter-width / 2;
@@ -117,6 +132,13 @@ body.standalone {
   font-weight: bold;
   margin: 15px 0;
   color: $brand-success
+}
+
+.navbar-back {
+  font: 17px/21px -apple-system-font;
+  margin: 15px 0;
+  color: $brand-success;
+  display: block;
 }
 
 .plant-health-circle canvas {

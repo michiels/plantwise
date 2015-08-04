@@ -2,7 +2,7 @@ var new_page_html = $("<%= j render "index" %>")
 new_page_html.addClass("backward-page")
 var current_page = $(".view-page")
 current_page.after(new_page_html)
-current_page.css({"position": "absolute"})
+current_page.css({"position": "absolute", width: $(window).width() })
 
 // current_page.addClass("hide-to-right")
 new_page_html.addClass("slide-right")
@@ -11,6 +11,11 @@ $("body").scrollTop(0)
 setTimeout(function() {
   current_page.remove()
 }, 400);
+
+new_navbar_html = $("<%= j render "navbar_index" %>")
+new_navbar_html.css({opacity: 0})
+$("#navbar-fixed").html(new_navbar_html)
+new_navbar_html.addClass("navbar-slide-back")
 
 $("[data-behavior=circle-progress]").each(function() {
   var circle_value = $(this).data("circle-value");

@@ -3,9 +3,6 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12">
-        <p id="notice"><%= notice %></p>
-
-        <h1><%= @plant.identifier %></h1>
 
         <table class="table table-condensed">
           <tr>
@@ -14,9 +11,8 @@
           <%= render @measurements %>
         </table>
 
-        <%= link_to 'Back', plants_path, remote: true %>
       </div>
     </div>
   </div>
-  
+
 </div>

@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+      <%= link_to :back, remote: true, class: "navbar-back" do %>
+        <%= icon("angle-left", "Back", class: "fa-lg") %>
+      <% end %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <div class="navbar-title"><%= @plant.identifier.humanize %></div>
+    </div>
+    <div class="col-xs-4">
+    </div>
+  </div>
+</div>
