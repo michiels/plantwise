@@ -24,15 +24,8 @@ body.standalone {
   }
 }
 
-// #app-viewport {
-//   width: 320;
-//   height: 480px;
-//   overflow: scroll;
-//   -webkit-overflow-scrolling: touch;
-// }
-
 .ios-top-statusbar-background {
-  background: $brand-success;
+  background: $navbar-default-bg;
   height: 20px;
   position: fixed;
   top: 0;
