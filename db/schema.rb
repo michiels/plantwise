@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150730221244) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "measurements", force: :cascade do |t|
     t.integer  "plant_id"
     t.float    "moisture"

@@ -1,10 +1,14 @@
 class PlantsController < ApplicationController
-  before_action :set_plant, only: [:show, :edit, :update, :destroy]
+  before_action :set_plant, only: [:show, :edit, :update, :destroy, :graph]
 
   # GET /plants
   # GET /plants.json
   def index
     @plants = Plant.all
+  end
+
+  def graph
+    render json: @plant.measurements.unscoped.group_by_hour(:created_at).average(:moisture)
   end
 
   # GET /plants/1

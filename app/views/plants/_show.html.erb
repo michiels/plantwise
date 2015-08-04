@@ -4,12 +4,7 @@
     <div class="row">
       <div class="col-xs-12">
 
-        <table class="table table-condensed">
-          <tr>
-            <th>moisture</th><th>created at</th>
-          </tr>
-          <%= render @measurements %>
-        </table>
+        <%= line_chart graph_plant_path(@plant) %>
 
       </div>
     </div>

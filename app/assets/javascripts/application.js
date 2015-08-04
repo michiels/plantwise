@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery-ui
+//= require chartkick
 //= require fastclick
 //= require bootstrap-sprockets
 //= require jquery-circle-progress
