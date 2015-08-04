@@ -8,7 +8,7 @@ class PlantsController < ApplicationController
   end
 
   def graph
-    render json: @plant.measurements.unscoped.group_by_hour(:created_at).average(:moisture)
+    render json: @plant.measurements.unscoped.group_by_day(:created_at, last: 7).average(:moisture)
   end
 
   # GET /plants/1
