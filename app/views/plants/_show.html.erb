@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-xs-12">
 
-        <%= line_chart graph_plant_path(@plant) %>
+        <%= line_chart graph_plant_path(@plant), min: 0, max: 1, discrete: true %>
 
       </div>
     </div>
